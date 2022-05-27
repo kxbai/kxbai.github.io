@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Love Dou Dou</title>
+	<link rel="img/shortcut icon" href="img/favicon.ico">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				豆豆，生日快乐!<br />
+				<br />
+				<span class="space"/><span class="space"/>愿豆豆每天开心，好运相伴，狂吃不胖，一夜暴富<br />
+				<span class="space"/><span class="space"/><span class="space"/><span class="space"/>眼里充满光芒，美好如期而至<br />
+				<br />
+				<span class="space"/><span class="space"/>很幸运遇见你，万幸抓住你<br />
+				<span class="space"/><span class="space"/><span class="space"/><span class="space"/>你就像我久不得的一块拼图，终于找到你<br />
+				<br />
+				<span class="space"/><span class="space"/>我喜欢你，喜欢你的单纯率真，喜欢你的盛世美颜<br />
+				<br />
+				<span class="space"/><span class="space"/>我爱你，你踏着星光而来，点亮我整个世界<br />
+				<span class="space"/><span class="space"/><span class="space"/><span class="space"/>在你到来的刹那我便丢了心智<br />
+				<span class="space"/><span class="space"/><span class="space"/><span class="space"/>才知道，你是我这辈子躲不过的美好<br />
+				<br />
+				<span class="space"/><span class="space"/>我爱你，媳妇<br />
+			<a href="index2.html">
+			<img src ="img/lovedoudou.jpg" width="340" height="256" alt="LoveDouDou"></a>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						豆豆, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="messages">- 超超</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Copyright © 2022 <a href='https://github.com/kxbai/'>kxbai</a><br />
+			2022.05.28
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2021, 8, 6);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+	</div>
+</body>
+</html>
